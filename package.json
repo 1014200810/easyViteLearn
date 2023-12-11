@@ -1,0 +1,36 @@
+{
+  "name": "easyvitelearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint:comment": "使用 ESLint 检查src下后缀为ts的文件",
+    "eslint": "eslint src --ext .ts",
+    "prettier:comment": "自动格式化 src 目录下的所有 .ts 文件",
+    "prettier": "prettier --write \"src/**/*.ts\"",
+    "prepare:comment": "别人下载项目进行install时会先执行下面的命令，确保大家都安装了git hooks钩子",
+    "prepare": "husky install",
+    "commitlint": "commitlint --config commitlint.config.js -e -V"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.14.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@types/node": "^20.10.4",
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}

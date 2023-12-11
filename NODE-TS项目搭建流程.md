@@ -133,5 +133,35 @@ module.exports = {
 
 # husky 实现 git代码提交自动检测
 
-1. npm install husky
-2. npx husky install
+1. npx husky-init
+2. pnpm i -D lint-staged
+3. 新建.lintstagedrc,写入
+
+```JSON
+{
+  "src/**/*.{ts}": ["eslint"]
+}
+
+```
+
+4. .husky/pre-commit修改
+
+```shell
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+echo "即将进行代码检测"
+npx lint-staged
+
+```
+
+5. .husky/pre-commit修改
+6. pnpm install --save-dev @commitlint/config-conventional @commitlint/cli
+7. .husky/commit-msg修改
+
+```shell
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+echo "提交msg检查"
+npm run commitlint
+
+```
