@@ -37,11 +37,7 @@
       "args": [
         "${workspaceFolder}\\src\\index.ts" //路径位置
       ],
-      "runtimeArgs": [
-        // 反方向执行
-        "-r",
-        "ts-node/register"
-      ],
+      "runtimeArgs": ["-r", "ts-node/register"],
       "cwd": "${workspaceRoot}",
       "protocol": "inspector",
       "internalConsoleOptions": "openOnSessionStart"
